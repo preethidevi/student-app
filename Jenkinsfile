@@ -16,3 +16,5 @@ pipeline {
           sh 'docker push preethidevi/student-app:latest'
          }
        } 
+     }
+   } 
