@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stage {
+  stages {
     stage('clone') {
       steps {
         git 'https://github.com/preethidevi/student-app.git'
