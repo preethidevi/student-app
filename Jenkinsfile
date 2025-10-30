@@ -13,8 +13,9 @@ pipeline {
     }
     stage('Push Image') {
       steps {
-          sh 'docker push preethidevi/student-app:latest'
-         }
-       } 
-     }
-   } 
+        sh 'docker push preethidevi/student-app:latest'
+      }
+    }
+  }
+}
+
