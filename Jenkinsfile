@@ -13,7 +13,12 @@ pipeline {
     }
     stage('Push Image') {
       steps {
-        sh 'docker push preethidevi/student-app:latest'
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+          sh '''
+            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+            docker push preethidevi/student-app:latest
+          '''
+        }  
       }
     }
   }
